@@ -1,7 +1,8 @@
 <?php
 
-namespace Database\Factories;
+namespace Database\Factories\Product;
 
+use App\Models\Product\Product;
 use App\Models\Product\ProductProperties;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -22,5 +23,23 @@ class ProductFactory extends Factory
             ProductProperties::STOCK => fake()->numberBetween(100,1000),
             ProductProperties::PRICE => fake()->numberBetween(1, 2000),
         ];
+    }
+
+    public static function byTimes(int $times = 20): array
+    {
+        $productsId = [];
+        for (; $times > 0; $times--){
+            $product = Product::create(
+                [
+                    ProductProperties::NAME => fake()->company(),
+                    ProductProperties::STOCK => fake()->numberBetween(100,1000),
+                    ProductProperties::PRICE => fake()->numberBetween(1, 2000),
+                ]
+            );
+            $product->save();
+            $productsId[] = $product->attributesToArray()['id']->serialize();
+        }
+
+        return $productsId;
     }
 }
