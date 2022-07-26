@@ -21,7 +21,7 @@ class Product extends Model
     protected $table = ProductProperties::TABLE_NAME;
     protected $primaryKey = ProductProperties::ID;
     public $incrementing = false;
-//    public $timestamps = false;
+    //    public $timestamps = false;
 
     //TODO: Should be convenient usage of value objects instead of primitives.
     //TODO: So, We'd define own rules for our attributes.
@@ -46,7 +46,7 @@ class Product extends Model
      * @var string[]
      */
     protected $fillable = [
-//        ProductProperties::ID,
+    //        ProductProperties::ID,
         ProductProperties::NAME,
         ProductProperties::STOCK,
         ProductProperties::PRICE,

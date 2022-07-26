@@ -14,7 +14,7 @@ class OperationFindAllUseCase
 
     public function __invoke(): array
     {
-        if (count($this->cache) > 0){
+        if (count($this->cache) > 0) {
             return $this->cache;
         }
 

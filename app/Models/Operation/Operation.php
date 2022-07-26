@@ -19,7 +19,7 @@ class Operation extends Model
     protected $table = OperationProperties::TABLE_NAME;
     protected $primaryKey = OperationProperties::ID;
     public $incrementing = false;
-//    public $timestamps = false;
+    //    public $timestamps = false;
 
 
     public static function create(array $data): self
@@ -35,7 +35,7 @@ class Operation extends Model
      * @var string[]
      */
     protected $fillable = [
-//        OperationProperties::ID,
+    //        OperationProperties::ID,
         OperationProperties::OPERATION,
     ];
 

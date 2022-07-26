@@ -19,7 +19,7 @@ class Transaction extends Model
     protected $table = TransactionProperties::TABLE_NAME;
     protected $primaryKey = TransactionProperties::ID;
     public $incrementing = false;
-//    public $timestamps = false;
+    //    public $timestamps = false;
 
     use HasFactory;
 
@@ -34,7 +34,7 @@ class Transaction extends Model
      * @var string[]
      */
     protected $fillable = [
-//        TransactionProperties::ID,
+    //        TransactionProperties::ID,
         TransactionProperties::PRODUCT_ID,
         TransactionProperties::IS_CANCELED,
         TransactionProperties::OPERATION_ID,
